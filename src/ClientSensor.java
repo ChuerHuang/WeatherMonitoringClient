@@ -30,7 +30,7 @@ public class ClientSensor {
     }
 
     //post request
-    public String restCallerPost(String path, String param) {
+    public static String restCallerPost(String path, String param) {
         //path
         //param json {}
         //interface ip
@@ -80,8 +80,7 @@ public class ClientSensor {
     }
     public static void main(String[] args) throws IOException {
         String dataString = SensorDataGenerate();
-        RestCallerUtil rcuPost = new RestCallerUtil();
-        String resultDataPost = rcuPost.restCallerPost(pathPost, paramPost);
-        System.out.println(resultDataPost);
+        String postResponse = restCallerPost("", dataString);
+        System.out.println(postResponse);
     }
 }
